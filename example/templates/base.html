@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Ajax Tasks Test</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                    background-color:#f6f6f6;
+            }
+
+            #page {
+                width: 80%;
+                margin: 5% 10%;
+            }
+
+            ul.photos {
+                list-style: none;
+            }
+            ul.photos li {
+                display: inline-block;
+                width: 150px;
+                height: 150px;
+                margin: 5px;
+            }
+
+            ul.photos li a {
+                display: block;
+                width: 150px;
+                height: 150px;
+            }
+
+            ul.photos li a img {
+                -webkit-filter: grayscale(100%);
+            }
+
+            ul.photos li a img:hover {
+                animation: gray 0.5s;
+                filter: grayscale(0%);
+                -moz-animation: gray 0.5s;
+                -moz-filter: grayscale(0%);
+                -webkit-animation: gray 0.5s;
+                -webkit-filter: grayscale(0%);
+            }
+            @keyframes gray { from { filter: grayscale(100%); } to { filter: grayscale(0%); } }
+            @-moz-keyframes gray { from { -moz-filter: grayscale(100%); } to { -moz-filter: grayscale(0%); } }
+            @-webkit-keyframes gray { from { -webkit-filter: grayscale(100%); } to { -webkit-filter: grayscale(0%); } }
+
+            form {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            input[type="text"] {
+                width: 30%;
+                font: bold 24px sans-serif;
+                padding: 6px 10px;
+                border: 1px solid #ccc;
+                border-radius: 10px 0 0 10px;
+            }
+
+            input[type="text"]:hover,
+            input[type="text"]:focus {
+                border-color: #0066cc;
+                outline: none;
+            }
+
+            input[type="submit"] {
+                font: bold 24px sans-serif;
+                padding: 6px 10px;
+                border: 1px solid #ccc;
+                background: #f6f6f6;
+                border-radius: 0 10px 10px 0;
+            }
+
+            input[type="submit"]:hover,
+            input[type="submit"]:focus {
+                outline: none;
+                cursor: pointer;
+                background: #ccc;
+                border-color: #aaa;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="page">
+        {% block content %}
+        {% endblock content %}
+        </div>
+    </body>
+</html>

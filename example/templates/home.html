@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load ajax_task %}
+{% block title %}Flickr Test{% endblock title %}
+{% block content %}
+    <form action="{% url home %}" method="GET">
+        <input type="text" name="query" value="{{ query|default:'' }}" placeholder="Search Flickr">
+        <input type="submit" value="Search">
+    </form>
+    {% ajax_task flickr query %}
+{% endblock content %}

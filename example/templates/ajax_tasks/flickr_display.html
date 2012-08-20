@@ -1,0 +1,5 @@
+<ul class="photos">
+    {% for photo in data %}
+    <li><a href="{{ photo.link }}"><img src="{{ photo.src }}" alt="{{ photo.title }}" width="150" height="150"></a></li>
+    {% endfor %}
+</ul>
